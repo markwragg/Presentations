@@ -12,4 +12,4 @@ Date       | Location         | Topic
 
 Date       | Location         | Topic
 -----------| -----------------| -----------------------------------------------------------------------------------------
-2018-09-25 | Southampton PSUG | [Developing and Testing Cross Platform Compatible PowerShell Modules with PowerShell Core](https://github.com/markwragg/Presentations/20180925_Southampton-PSUG)
+2018-09-25 | Southampton PSUG | [Developing and Testing Cross Platform Compatible PowerShell Modules with PowerShell Core](https://github.com/markwragg/Presentations/tree/master/20180925_Southampton-PSUG)
