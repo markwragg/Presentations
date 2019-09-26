@@ -1,3 +1,6 @@
+[cmdletbinding()]
+Param()
+
 # Connection details
 $InfluxConn = @{
     URI    = 'http://localhost:8086/write?db=metrics'

@@ -1,3 +1,6 @@
+[cmdletbinding()]
+Param()
+
 $InfluxConn = @{
     Server   = 'http://localhost:8086'
     Database = 'metrics'
@@ -20,8 +23,14 @@ $Metrics = @{
     Restart = $Restart
 }
 
-Write-Influx @InfluxConn -Measure 'Server' -Tags $Tags -Metrics $Metrics -TimeStamp $BootTime
+Write-Influx @InfluxConn -Measure 'Startup' -Tags $Tags -Metrics $Metrics -TimeStamp $BootTime -Verbose
 
-# Visualise with Grafana
+# Visualise with Grafana -- Need to change aggregation to count(), set fill to none.
 
-# Demonstrate annotations
+<# Demonstrate annotations:
+
+- Board Settings > Annotations
+- Query: SELECT Restart,Host FROM Startup WHERE $timeFilter
+- Text: Host
+
+#>
