@@ -27,7 +27,7 @@ While (1) {
             ExecutionTime = $ExecutionTime.TotalSeconds
         }
 
-        Write-InfluxUDP @InfluxConn -Measure 'MyApp' -Tags $Tags -Metrics $Metrics
+        Write-InfluxUDP @InfluxConn -Measure 'MyApp' -Tags $Tags -Metrics $Metrics -Verbose
     }
     
     Start-Sleep 5

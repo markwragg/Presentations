@@ -20,15 +20,15 @@ $BytesReceivedCounter = '\Network Interface(*)\Bytes Received/sec'
 While (1) {
 
     $Metrics = @{
-        Memory = (Get-Counter $MemCounter).CounterSamples.CookedValue
-        CPU    = (Get-Counter $CPUCounter).CounterSamples.CookedValue
+        Memory = (Get-Counter $MemCounter).CounterSamples[0].CookedValue
+        CPU    = (Get-Counter $CPUCounter).CounterSamples[0].CookedValue
     }
   
-    Write-Influx @InfluxConn -Measure 'Host' -Tags $Tags -Metrics $Metrics -Verbose
+    Write-Influx @InfluxConn -Measure 'Server' -Tags $Tags -Metrics $Metrics -Verbose
 
     $Metrics = @{
-        BytesSent     = (Get-Counter $BytesSentCounter).CounterSamples.CookedValue
-        BytesReceived = (Get-Counter $BytesReceivedCounter).CounterSamples.CookedValue
+        BytesSent     = (Get-Counter $BytesSentCounter).CounterSamples[0].CookedValue
+        BytesReceived = (Get-Counter $BytesReceivedCounter).CounterSamples[0].CookedValue
     }
 
     Write-Influx @InfluxConn -Measure 'Network' -Tags $Tags -Metrics $Metrics -Verbose

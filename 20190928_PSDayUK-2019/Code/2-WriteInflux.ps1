@@ -17,11 +17,11 @@ $CPUCounter = '\Processor(_Total)\% Processor Time'
 While (1) {
 
     $Metrics = @{
-        Memory = (Get-Counter $MemCounter).CounterSamples.CookedValue
-        CPU    = (Get-Counter $CPUCounter).CounterSamples.CookedValue
+        Memory = (Get-Counter $MemCounter).CounterSamples[0].CookedValue
+        CPU    = (Get-Counter $CPUCounter).CounterSamples[0].CookedValue
     }
   
-    Write-Influx @InfluxConn -Measure 'Server' -Tags $Tags -Metrics $Metrics
+    Write-Influx @InfluxConn -Measure 'Server' -Tags $Tags -Metrics $Metrics -Verbose
   
     Start-Sleep -Seconds 5
 }

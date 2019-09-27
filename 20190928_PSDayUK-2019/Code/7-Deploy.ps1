@@ -38,3 +38,5 @@ Else {
 }
 
 Write-Host 'Deployment complete!' -ForegroundColor Green
+
+# Visualise Deployments: SELECT App FROM Deployment WHERE $timeFilter

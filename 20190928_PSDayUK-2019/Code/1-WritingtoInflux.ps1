@@ -13,8 +13,7 @@ $Region = 'UKSouth'
 
 While (1) {
 
-    $CPU = ((Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples |
-        Where-Object { $_.InstanceName -eq '_total' }).CookedValue
+    $CPU = (Get-Counter '\Processor(_Total)\% Processor Time').CounterSamples[0].CookedValue
   
     # This is the Influx line protocol
     $Metric = "cpu_load,Host=$Hostname,Region=$Region value=$CPU"
