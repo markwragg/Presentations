@@ -70,28 +70,43 @@ Visualise in Grafana, show having two metrics on one graph with different Axis.
 
 ## > Writing Metrics via UDP
 
-.
+Explain TCP vs UDP
+Show how we can use `Write-InfluxUDP` to send the same metrics via a UDP listener.
+Stop/start Influx service to show how the script is unaffected.
+Writing via TCP would cause errors/timeouts.
 
 ## > Monitoring with PowerShell
 
-.
+Give some thought to covering these areas:
+
+- Infrastructure/OS
+- Application
+- Business Logic
+- Deployments
 
 ## > CPU / Memory / Disk / Network
 
-.
+Example PS script for tracking these metrics.
+Use to demonstrate another graph type - bar chart
 
 ## > Alerting with Grafana
 
-.
+Alerts can be configured on the graph visualisation.
+Show how to setup.
 
 ## > Adding Annotations with Grafana
 
-.
+Show adding annotations manually.
+Show script for tracking system startups.
+Show how we can use automatic annotations to overlay startups on the graphs.
 
 ## > Measuring App Performance
 
-.
+Show script that measures app execution time and errors.
+Show deployment script.
+Add automatic annotations for deployments.
+Show how we can see the deployments made difference to the app execution.
 
 ## > Summary
 
-.
+Sum up per notes on slide.
